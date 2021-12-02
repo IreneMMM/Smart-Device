@@ -1,0 +1,46 @@
+body {
+    overflow-x: hidden;
+}
+
+.page {
+    margin: 0 auto;
+    padding: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "RobotoCondensed", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $basic-grey;
+    background-color: $basic-white;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1495px;
+    margin: 0 auto;
+}
+
+.page-main {
+    flex-grow: 1;
+}
+
+.page-footer {
+    flex-shrink: 0;
+}

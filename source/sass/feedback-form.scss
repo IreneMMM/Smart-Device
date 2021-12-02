@@ -1,0 +1,85 @@
+.feedback-form {
+    background-color: $basic-blue;
+    color: $basic-white;
+    padding-top: 95px;
+    padding-bottom: 115px;
+    position: relative;
+
+    @media (max-width: $tablet-width) {
+        padding-top: 83px;
+        padding-bottom: 103px;
+    }
+
+    @media (max-width: $mobile-width) {
+        padding-top: 33px;
+        padding-bottom: 41px;
+    }
+}
+
+
+.feedback-form__wrapper::after {
+    content: "";
+    position: absolute;
+    width: 511px;
+    height: 288px;
+    top: 30%;
+    right: 55%;
+    background-repeat: no-repeat;
+    background-image: url(../img/paper-airplane.svg);
+
+    @media (max-width: $tablet-width) {
+        display: none;
+    }
+}
+
+.feedback-form__container {
+    margin: 0 auto;
+    max-width: 1220px;
+    padding: 0 25px;
+    box-sizing: border-box;
+
+    @media (max-width: $mobile-width) {
+        padding: 0 15px;
+    }
+}
+
+.feedback-form__wrapper {
+    width: 49%;
+    margin-left: auto;
+
+    @media (max-width: $tablet-width) {
+        width: auto;
+        margin-left: 0;
+    }
+}
+
+.feedback-form__wrapper h2 {
+    font-size: 36px;
+    line-height: 51px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 7px;
+
+    @media (max-width: $tablet-width) {
+        font-size: 32px;
+        line-height: 45px;
+    }
+
+    @media (max-width: $mobile-width) {
+        font-size: 28px;
+        line-height: 39px;
+        margin-bottom: 17px;
+    }
+}
+
+.feedback-form__wrapper p {
+    @include add-font;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    margin-bottom: 50px;
+
+    @media (max-width: $mobile-width) {
+        margin-bottom: 25px;
+    }
+}
