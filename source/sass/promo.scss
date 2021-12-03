@@ -2,12 +2,10 @@
     color: $basic-white;
     display: flex;
     justify-content: space-between;
-    column-gap: 83px;
 
     @media (max-width: $tablet-width) {
         padding-left: 65px;
         position: relative;
-        column-gap: 0;
     }
 
     @media (max-width: $mobile-width) {
@@ -17,8 +15,7 @@
 }
 
 .promo__info {
-    padding-top: 54px;
-    padding-left: 37px;
+    padding-top: 65px;
 
     @media (max-width: $tablet-width) {
         max-width: 61%;
@@ -104,8 +101,6 @@
 }
 
 .promo__image {
-
-
     @media (max-width: $tablet-width) {
         z-index: -1;
         width: 465px;
@@ -121,4 +116,3 @@
         left: 22px;
     }
 }
-

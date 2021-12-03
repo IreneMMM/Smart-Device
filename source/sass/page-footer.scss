@@ -177,7 +177,7 @@
         background: transparent;
         cursor: pointer;
         position: relative;
-        background-image: url("../img/toggle-close.svg");
+        background-image: url("../img/toggle-open.svg");
         background-repeat: no-repeat;
         background-position: center;
 
@@ -235,7 +235,7 @@
     }
 
     .site-navigation__toggle {
-        background-image: url("../img/toggle-open.svg");
+        background-image: url("../img/toggle-close.svg");
     }
 }
 
@@ -245,7 +245,7 @@
     }
 
     .contacts__toggle {
-        background-image: url("../img/toggle-open.svg");
+        background-image: url("../img/toggle-close.svg");
     }
 }
 
