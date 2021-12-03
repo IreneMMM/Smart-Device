@@ -126,12 +126,12 @@
 
     // аккордеон 
 
-    var accordionButton = document.querySelector('.site-navigation__toggle');
-    var contactsButton = document.querySelector('.contacts__toggle');
-    var navigation = document.querySelector('.page-footer__navigation');
-    var contacts = document.querySelector('.page-footer__contacts');
+    var accordionButton = document.querySelector('site-navigation__toggle');
+    var contactsButton = document.querySelector('contacts__toggle');
+    var navigation = document.querySelector('page-footer__navigation');
+    var contacts = document.querySelector('page-footer__contacts');
 
-    navigation.classList.add('page-footer__navigation--closed');
+    navigation.classList.add('page-footer__nav--closed');
     contacts.classList.add('page-footer__contacts--closed');
 
     accordionButton.addEventListener('click', function () {
@@ -148,7 +148,7 @@
     contactsButton.addEventListener('click', function () {
         if (contacts.classList.contains('page-footer__contacts--closed')) {
             contacts.classList.remove('page-footer__contacts--closed');
-            if (!navigation.classList.contains('page-footer__navigation--closed')) {
+            if (!navigation.classList.contains('page-footer__navigation-closed')) {
                 navigation.classList.add('page-footer__navigation--closed');
             }
         } else {

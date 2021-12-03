@@ -4,9 +4,6 @@
     padding-top: 95px;
     padding-bottom: 115px;
     position: relative;
-    background-repeat: no-repeat;
-    background-image: url("../img/triangles-feedback-desktop.svg");
-    background-position: right top 57%;
 
     @media (max-width: $tablet-width) {
         padding-top: 83px;
@@ -19,12 +16,13 @@
     }
 }
 
+
 .feedback-form__wrapper::after {
     content: "";
     position: absolute;
     width: 511px;
     height: 288px;
-    top: 24%;
+    top: 30%;
     right: 55%;
     background-repeat: no-repeat;
     background-image: url(../img/paper-airplane.svg);
