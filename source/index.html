@@ -19,7 +19,7 @@
 
 <body class="page">
   <header class="page-header">
-    <div class="page-header__container container">
+    <div class="page-header__container">
       <nav class="page-header__nav">
         <a class="page-header__logo logo">
           <picture>
@@ -52,7 +52,10 @@
         </div>
 
         <div class="promo__image">
-          <img src="img/chip.png" srcset="img/chip@2x.png" width="705" height="515" alt="Изображение печатной платы">
+          <picture>
+            <source type="image/webp" srcset="img/chip.webp 1x, img/chip@2x.webp 2x">
+            <img src="img/chip.png" srcset="img/chip@2x.png" width="705" height="515" alt="Изображение печатной платы">
+          </picture>
         </div>
       </section>
     </div>
@@ -327,5 +330,4 @@
   <script src="js/script.js"></script>
 
 </body>
-
 </html>

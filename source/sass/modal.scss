@@ -1,172 +1,172 @@
 .modal {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: $bg-modal;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-modal;
 }
 
 .modal__wrapper {
-    position: relative;
-    width: 490px;
-    padding: 33px 40px 36px;
-    background-color: $basic-blue;
-    box-sizing: border-box;
+  position: relative;
+  width: 490px;
+  padding: 33px 40px 36px;
+  background-color: $basic-blue;
+  box-sizing: border-box;
 }
 
 .modal h2 {
-    @include basic-font;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 50px;
-    margin: 0;
-    margin-bottom: 6px;
-    color: $basic-white;
+  @include basic-font;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 50px;
+  margin: 0;
+  margin-bottom: 6px;
+  color: $basic-white;
 }
 
 .modal p {
-    @include add-font;
-    font-weight: 400;
-    line-height: 22px;
-    display: block;
-    width: 370px;
-    margin: 0;
-    margin-bottom: 27px;
-    color: $basic-white;
+  @include add-font;
+  font-weight: 400;
+  line-height: 22px;
+  display: block;
+  width: 370px;
+  margin: 0;
+  margin-bottom: 27px;
+  color: $basic-white;
 }
 
 .modal__form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    input[type="text"],
-    input[type="tel"],
-    textarea {
-        @include add-font;
-        line-height: 22px;
-        margin-bottom: 30px;
-        padding: 14px 24px 16px;
-        background-color: #19baff;
-        outline: none;
-        border: none;
-        color: white;
-    }
+  input[type="text"],
+  input[type="tel"],
+  textarea {
+    @include add-font;
+    line-height: 22px;
+    margin-bottom: 30px;
+    padding: 14px 24px 16px;
+    background-color: $input-color;
+    outline: none;
+    border: none;
+    color: $basic-white;
+  }
 
-    textarea {
-        @include add-font;
-        min-height: 104px;
-        resize: none;
-        box-sizing: border-box;
-    }
+  textarea {
+    @include add-font;
+    min-height: 104px;
+    resize: none;
+    box-sizing: border-box;
+  }
 }
 
-.modal__form input::placeholder, 
+.modal__form input::placeholder,
 .modal__form textarea::placeholder {
-    color: $basic-white;
+  color: $basic-white;
 }
 
 .modal__button {
-    width: 100%;
-    margin-bottom: 32px;
-    padding-top: 14px;
-    padding-bottom: 15px;
-    letter-spacing: 0.7px;
-    color: $basic-white;
-    border: 1px solid $basic-white;
-    background-color: $basic-blue;
+  width: 100%;
+  margin-bottom: 32px;
+  padding-top: 14px;
+  padding-bottom: 15px;
+  letter-spacing: 0.7px;
+  color: $basic-white;
+  border: 1px solid $basic-white;
+  background-color: $basic-blue;
 }
 
 .modal__checkbox {
-    display: flex;
-    max-width: 360px;
+  display: flex;
+  max-width: 360px;
 }
 
 .modal__checkbox label {
-    @include add-font;
-    position: relative;
-    opacity: 0.8;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    cursor: pointer;
-    padding-left: 48px;
-    color: $basic-white;
+  @include add-font;
+  position: relative;
+  opacity: 0.8;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  padding-left: 48px;
+  color: $basic-white;
 }
 
 .modal__checkbox label::before {
-    content: "";
-    position: absolute;
-    box-sizing: border-box;
-    width: 16px;
-    height: 16px;
-    left: 5px;
-    border: 1px solid $basic-white;
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  left: 5px;
+  border: 1px solid $basic-white;
 }
 
 .modal__button-close {
-    font-size: 0;
+  font-size: 0;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: $basic-blue;
+
+  &::before,
+  &::after {
+    content: "";
     position: absolute;
-    top: 3px;
-    right: 3px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    outline: none;
-    background-color: $basic-blue;
+    top: 13px;
+    right: 24px;
+    width: 1px;
+    height: 23px;
+    background-color: $basic-white;
+  }
 
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        top: 13px;
-        right: 24px;
-        width: 1px;
-        height: 23px;
-        background-color: $basic-white;
-    }
+  &::before {
+    transform: rotate(45deg);
+  }
 
-    &::before {
-        transform: rotate(45deg);
-    }
+  &::after {
+    transform: rotate(-45deg);
+  }
 
-    &::after {
-        transform: rotate(-45deg);
-    }
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+    border: 1px solid $basic-white;
+  }
 
-    &:hover,
-    &:focus {
-        opacity: 0.7;
-        border: 1px solid $basic-white;
-    }
-
-    &:active {
-        opacity: 0.5;
-    }
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .modal--opened {
-    display: flex;
-    animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  display: flex;
+  animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 .modal__checkbox input:checked + label::before {
-    background-image: url(../img/icon-checkbox.svg);
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url("../img/icon-checkbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -1,62 +1,64 @@
 .button {
-    @include basic-font;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 5px;
-    color: $basic-white;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    padding: 10px;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    box-sizing: border-box;
+  @include basic-font;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  color: $basic-white;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-sizing: border-box;
 
-    &:hover {
-        opacity: 0.8;
-    }
+  &:hover {
+    opacity: 0.8;
+  }
 
-    &:active {
-        opacity: 0.5;
-    }
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .button--consultation {
-    display: flex;
-    background-color: $basic-blue;
-    min-height: 55px;
-    width: 100%;
-    max-width: 407px;
-    margin-left: 92px;
+  display: flex;
+  background-color: $basic-blue;
+  min-height: 55px;
+  width: 100%;
+  max-width: 407px;
+  margin-left: 98px;
+  padding-top: 14px;
+  padding-left: 12px;
 
-    @media (max-width: $tablet-width) {
-        max-width: 379px;
-        margin-left: 48px;
-    }
+  @media (max-width: $tablet-width) {
+    max-width: 379px;
+    margin-left: 48px;
+  }
 
-    @media (max-width: $mobile-width) {
-        display: none;
-    }
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .button--consultation-mobile {
-    display: none;
+  display: none;
 
-    @media (max-width: $mobile-width) {
-        display: flex;
-        max-width: 100%;
-        margin-left: 0;
-        background-color: $basic-blue;
-        min-height: 55px;
-    }
+  @media (max-width: $mobile-width) {
+    display: flex;
+    max-width: 100%;
+    margin-left: 0;
+    background-color: $basic-blue;
+    min-height: 55px;
+  }
 }
 
 .button--more {
-    max-width: 180px;
-    min-height: 45px;
-    color: $basic-blue;
-    border: 1px solid $basic-blue;
+  max-width: 180px;
+  min-height: 45px;
+  color: $basic-blue;
+  border: 1px solid $basic-blue;
 }
