@@ -21,12 +21,9 @@
   <header class="page-header">
     <div class="page-header__container">
       <nav class="page-header__nav">
-        <a class="page-header__logo logo">
-          <picture>
-            <!-- 1x: 38px, 2x: 404px -->
-            <source media="(max-width: 767px)" srcset="img/icon-logo-mobile.svg">
-            <img src="img/icon-logo.svg" width="202" height="52" alt="Главная страница сайта Smart Device">
-          </picture>
+        <a class="page-header__logo">
+          <p>Smart Device</p>
+          <p>умные технологии</p>
         </a>
         <div class="page-header__contacts">
           <ul class="page-header__contacts-list">
@@ -49,13 +46,6 @@
           <p>Производство и монтаж, поставка комплектующих, блоков и модулей</p>
           <a href="#feedback" class="promo__link button button--consultation">Получить бесплатную консультацию</a>
           <a href="#feedback" class="promo__link button button--consultation-mobile">Бесплатная консультация</a>
-        </div>
-
-        <div class="promo__image">
-          <picture>
-            <source type="image/webp" srcset="img/chip.webp 1x, img/chip@2x.webp 2x">
-            <img src="img/chip.png" srcset="img/chip@2x.png" width="705" height="515" alt="Изображение печатной платы">
-          </picture>
         </div>
       </section>
     </div>
@@ -174,17 +164,17 @@
       <div class="catalog__container">
         <h2>Service Device предлагает следующие товары и услуги</h2>
         <ul class="catalog__list">
-          <li class="catalog__item сatalog__item--production">
+          <li class="catalog__item catalog__item--production">
             <a class="catalog__link" href="#">
               <h3>Производство печатных плат</h3>
             </a>
           </li>
-          <li class="catalog__item сatalog__item--mounting">
+          <li class="catalog__item catalog__item--mounting">
             <a class="catalog__link" href="#">
               <h3>Монтаж печатных плат</h3>
             </a>
           </li>
-          <li class="catalog__item сatalog__item--accessories">
+          <li class="catalog__item catalog__item--accessories">
             <a class="catalog__link" href="#">
               <h3>Комплектующие для светотехники</h3>
             </a>
@@ -198,22 +188,21 @@
         <div class="feedback-form__wrapper">
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
-          <form class="question-form" action="#" method="post">
+          <form class="question-form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="question-form__field">
               <label class="visually-hidden" for="name"></label>
               <input type="text" id="name" placeholder="Имя" required>
             </div>
             <div class="question-form__field">
               <label class="visually-hidden" for="phone"></label>
-              <input class="tel" type="tel" name="phone" id="phone" value="" placeholder="Телефон" required>
+              <input type="tel" name="phone" id="phone" value="" placeholder="Телефон" required>
             </div>
-
             <textarea placeholder="Ваш вопрос" name="question" required></textarea>
-            <button class="question-form__button button button--ask" type="submit">Задать вопрос</button>
+            <button type="submit">Задать вопрос</button>
             <div class="question-form__field question-form__field--agreement">
               <input class="visually-hidden" type="checkbox" id="politics" name="agree" value="politics" checked
                 required>
-              <label for="agreement">Я согласен на обработку персональных данных</label>
+              <label for="politics">Я согласен на обработку персональных данных</label>
             </div>
           </form>
         </div>
@@ -306,18 +295,18 @@
   <section class="modal">
     <div class="modal__wrapper">
       <h2>Закажите звонок</h2>
-      <form class="modal__form form" method="post" action="#">
+      <form class="modal__form form" method="post" action="https://echo.htmlacademy.ru/">
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
         <label class="visually-hidden" for="username">Имя</label>
         <input id="username" name="username" type="text" placeholder="Имя" required>
 
         <label class="visually-hidden" for="userphone">Телефон</label>
-        <input class="tel" id="userphone" name="phone" type="tel" placeholder="Телефон" required>
+        <input id="userphone" name="phone" type="tel" placeholder="Телефон" required>
 
         <label class="visually-hidden" for="userquestion">Вопрос</label>
         <textarea id="userquestion" name="question" placeholder="Ваш вопрос" required></textarea>
 
-        <button class="modal__button button button--send" type="submit">Отправить</button>
+        <button type="submit">Отправить</button>
         <div class="modal__checkbox">
           <input class="visually-hidden" type="checkbox" name="agreement" id="agreement" checked required>
           <label for="agreement">Я согласен на обработку персональных данных</label>
@@ -330,4 +319,5 @@
   <script src="js/script.js"></script>
 
 </body>
+
 </html>

@@ -55,6 +55,12 @@
     outline: none;
     border: none;
     color: $basic-white;
+
+    &:hover, 
+    &:focus {
+      opacity: 0.5;
+      outline: 1px solid $basic-blue;
+    }  
   }
 
   textarea {
@@ -70,7 +76,7 @@
   color: $basic-white;
 }
 
-.modal__button {
+.modal__form button[type="submit"] {
   width: 100%;
   margin-bottom: 32px;
   padding-top: 14px;

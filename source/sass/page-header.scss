@@ -1,35 +1,45 @@
 .page-header {
   padding: 33px 35px 0;
   position: relative;
-  min-height: 846px;
+  min-height: 878px;
   margin-bottom: 109px;
   background-color: $dark-grey;
-  background-image: url("../img/bg-header.svg"), url("../img/triangles-promo-desktop.svg");
+  background-image: url("../img/chip.png"), url("../img/bg-header-desktop.jpg");
   background-repeat: no-repeat;
-  background-position: top right 14%, left top;
-  background-size: cover;
+  background-position: top 258px right 14%, center top;
+  background-size: 37%, cover;
   z-index: 0;
   box-sizing: border-box;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/bg-header@2x.svg");
+    background-image: url("../img/chip@2x.png"), url("../img/bg-header-desktop@2x.jpg");
   }
 
   @media (max-width: $tablet-width) {
     padding: 20px 25px 0;
     min-height: 685px;
     margin-bottom: 54px;
-    background-image: url("../img/triangles-promo-tablet.svg");
-    background-position: right top;
-    background-size: auto;
+    background-image: url("../img/chip-tablet.png"), url("../img/bg-header-tablet.jpg");
+    background-repeat: no-repeat;
+    background-position: top 113px right 0, center top;
+    background-size: 260px, cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/chip-tablet@2x.png"), url("../img/bg-header-tablet@2x.jpg");
+    }
   }
 
   @media (max-width: $mobile-width) {
     padding: 17px;
     min-height: 647px;
     margin-bottom: 37px;
-    background-image: url("../img/triangles-promo-mobile.svg");
-    background-position: right top;
+    background-image: url("../img/chip-mobile.png"), url("../img/bg-header-mobile.jpg");
+    background-position: top 92px right, center top;
+    background-size: 294px, cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/chip-mobile@2x.png"), url("../img/bg-header-mobile@2x.jpg");
+    }
   }
 }
 
@@ -60,7 +70,6 @@
 
   @media (max-width: $tablet-width) {
     align-items: flex-start;
-    padding-top: 4px;
   }
 }
 
@@ -83,12 +92,7 @@
 }
 
 .page-header__contacts-item {
-  padding-left: 45px;
   position: relative;
-
-  @media (max-width: $tablet-width) {
-    padding-left: 0;
-  }
 }
 
 .page-header__contacts-link {
@@ -96,9 +100,12 @@
   line-height: 18px;
   color: $basic-white;
   text-decoration: none;
+  display: inline-block;
+  padding-left: 45px;
 
   @media (max-width: $tablet-width) {
     font-size: 0;
+    padding-left: 0;
   }
 
   &::before {
@@ -156,14 +163,45 @@
 }
 
 .page-header__logo {
-  display: block;
-  min-width: 202px;
-  margin-right: 30px;
+  width: 52px;
+  height: 52px;
+  background: url("../img/icon-logo.svg") no-repeat center / contain;
 
-  & img {
+  @media (max-width: $mobile-width) {
+    width: 38px;
+    height: 38px;
+    margin-right: auto;
+  }
+
+  p {
+    @include basic-font;
+    margin: 0;
+    margin-left: 65px;
+    display: inline-block;
+    width: 200px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: $basic-white;
+    padding-top: 5px;
+
+    @media (max-width: $tablet-width) {
+      margin-left: 68px;
+    }
+
     @media (max-width: $mobile-width) {
-      width: 38px;
-      height: 38px;
+      font-size: 0;
+    }
+
+    &:nth-child(2) {
+      font: 500 12px/14px "Roboto", "Arial", sans-serif;
+      color: #788891;
+      padding: 0;
+
+      @media (max-width: $mobile-width) {
+        font-size: 0;
+      }
     }
   }
 }

@@ -16,25 +16,20 @@
 .social__link {
   display: flex;
   position: relative;
-}
-
-.social__link::before {
-  content: "";
   display: block;
-  top: 0;
   width: 27px;
   height: 27px;
   background: no-repeat center;
-}
 
-.social__link--facebook::before {
-  background-image: url("../img/icon-facebook.svg");
-}
+  &--facebook {
+    background-image: url("../img/icon-facebook.svg");
+  }
 
-.social__link--odnoklassniki::before {
-  background-image: url("../img/icon-ok.svg");
-}
+  &--odnoklassniki {
+    background-image: url("../img/icon-ok.svg");
+  }
 
-.social__link--vkontakte::before {
-  background-image: url("../img/icon-vk.svg");
+  &--vkontakte {
+    background-image: url("../img/icon-vk.svg");
+  }
 }

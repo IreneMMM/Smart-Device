@@ -33,6 +33,13 @@
     color: $basic-white;
   }
 
+  &:hover, 
+  &:focus {
+    opacity: 0.5;
+    outline: 1px solid $basic-blue;
+  }
+
+
   @media (max-width: $tablet-width) {
     min-height: 159px;
   }
@@ -49,6 +56,12 @@
   padding: 14px 16px;
   border: 0;
   background-color: $input-color;
+
+  &:hover, 
+  &:focus {
+    opacity: 0.5;
+    outline: 1px solid $basic-blue;
+  }
 
   @media (max-width: $mobile-width) {
     padding: 15px 18px;
@@ -70,10 +83,21 @@
   color: $basic-white;
 }
 
-.question-form__button {
+.question-form button {
+  @include basic-font;
+  border-radius: 5px;
+  color: $basic-white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 270px;
   height: 45px;
-  padding: 0;
   background-color: $basic-blue;
   border: 1px solid $basic-white;
   font-size: 14px;
@@ -81,6 +105,14 @@
 
   @media (max-width: $mobile-width) {
     max-width: 100%;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 
