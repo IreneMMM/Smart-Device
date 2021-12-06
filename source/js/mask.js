@@ -1,44 +1,51 @@
 'use strict';
 
-(function () {
-  [].forEach.call(document.getElementsByTagName('input[type="tel"]'), function (input) {
-    var keyCode;
 
-    function mask(event) {
-      event.keyCode && (keyCode = event.keyCode);
-      var pos = this.selectionStart;
-      if (pos < 3) {
-        event.preventDefault();
+var phoneInputs = document.querySelectorAll('input[name="phone"]');
+
+window.addEventListener('DOMContentLoaded', () => {
+  function setCursorPosition(pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) {
+      elem.setSelectionRange(pos, pos);
+    } else if (elem.createTextRange) {
+      const range = elem.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  }
+
+  function mask(event) {
+    const matrix = '+7 (___) ___-__-__';
+    let i = 0;
+    const def = matrix.replace(/\D/g, '');
+    let val = this.value.replace(/\D/g, '');
+    if (def.length >= val.length) {
+      val = def;
+    }
+    this.value = matrix.replace(/./g, (a) => {
+      if (/[_\d]/.test(a) && i < val.length) {
+        return val.charAt(i++);
+      } else if (i >= val.length) {
+        return '';
+      } else {
+        return a;
       }
-      var matrix = '+7 (___) ___ ____';
-      var i = 0;
-      var def = matrix.replace(/\D/g, '');
-      var val = this.value.replace(/\D/g, '');
-      var new_value = matrix.replace(/[_\d]/g, function (a) {
-        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
-      });
-      i = new_value.indexOf('_');
-      if (i != -1) {
-        i < 5 && (i = 3);
-        new_value = new_value.slice(0, i);
-      }
-      var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-          function (a) {
-            return '\\d{1,' + a.length + '}';
-          }).replace(/[+()]/g, '\\$&');
-      reg = new RegExp('^' + reg + '$');
-      if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
-        this.value = new_value;
-      }
-      if (event.type == 'blur' && this.value.length < 5) {
+    });
+    if (event.type === 'blur') {
+      if (this.value.length === 2) {
         this.value = '';
       }
+    } else {
+      setCursorPosition(this.value.length, this);
     }
+  }
 
+  phoneInputs.forEach(input => {
     input.addEventListener('input', mask, false);
     input.addEventListener('focus', mask, false);
     input.addEventListener('blur', mask, false);
-    input.addEventListener('keydown', mask, false);
-
   });
-})();
+});

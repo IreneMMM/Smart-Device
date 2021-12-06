@@ -16,12 +16,10 @@
 
   var openmodal = function () {
     modal.classList.add('modal--opened');
-    // document.body.classList.add('disable-scroll');
   };
 
   var closemodal = function () {
     modal.classList.remove('modal--opened');
-    // document.body.classList.remove('disable-scroll');
   };
 
   try {
@@ -32,88 +30,55 @@
     isStorageSupport = false;
   }
 
-  button.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    openmodal();
-
-    if (storage.name) {
-      userName.value = storage.name;
-      userPhone.value = storage.phone;
-      message.value = storage.message;
-      message.focus();
-    } else {
-      userName.focus();
-    }
-  });
-
-  close.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    closemodal();
-  });
-
-  form.addEventListener('submit', function () {
-    if (isStorageSupport) {
-      localStorage.setItem('name', userName.value);
-      localStorage.setItem('phone', userPhone.value);
-      localStorage.setItem('message', message.value);
-    }
-  });
-
-  window.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === KEYCODE.esc) {
+  if (button) {
+    button.addEventListener('click', function (evt) {
       evt.preventDefault();
-      if (modal.classList.contains('modal--opened')) {
+      openmodal();
+
+      if (storage.name) {
+        userName.value = storage.name;
+        userPhone.value = storage.phone;
+        message.value = storage.message;
+        message.focus();
+      } else {
+        userName.focus();
+      }
+    });
+  }
+
+  if (close) {
+    close.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      closemodal();
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', function () {
+      if (isStorageSupport) {
+        localStorage.setItem('name', userName.value);
+        localStorage.setItem('phone', userPhone.value);
+        localStorage.setItem('message', message.value);
+      }
+    });
+  }
+
+  if (window) {
+    window.addEventListener('keydown', function (evt) {
+      if (evt.keyCode === KEYCODE.esc) {
+        evt.preventDefault();
+        if (modal.classList.contains('modal--opened')) {
+          closemodal();
+        }
+      }
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', function (evt) {
+      if (evt.target === modal) {
         closemodal();
       }
-    }
-  });
-
-  modal.addEventListener('click', function (evt) {
-    if (evt.target === modal) {
-      closemodal();
-    }
-  });
-
-  // скролл
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
     });
-  });
-
-  // аккордеон
-
-  var accordionButton = document.querySelector('.site-navigation__toggle');
-  var contactsButton = document.querySelector('.contacts__toggle');
-  var navigation = document.querySelector('.page-footer__navigation');
-  var contacts = document.querySelector('.page-footer__contacts');
-
-  navigation.classList.add('page-footer__navigation--closed');
-  contacts.classList.add('page-footer__contacts--closed');
-
-  accordionButton.addEventListener('click', function () {
-    if (navigation.classList.contains('page-footer__navigation--closed')) {
-      navigation.classList.remove('page-footer__navigation--closed');
-      if (!contacts.classList.contains('page-footer__contacts--closed')) {
-        contacts.classList.add('page-footer__contacts--closed');
-      }
-    } else {
-      navigation.classList.add('page-footer__navigation--closed');
-    }
-  });
-
-  contactsButton.addEventListener('click', function () {
-    if (contacts.classList.contains('page-footer__contacts--closed')) {
-      contacts.classList.remove('page-footer__contacts--closed');
-      if (!navigation.classList.contains('page-footer__navigation--closed')) {
-        navigation.classList.add('page-footer__navigation--closed');
-      }
-    } else {
-      contacts.classList.add('page-footer__contacts--closed');
-    }
-  });
+  }
 })();
