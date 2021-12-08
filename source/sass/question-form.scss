@@ -35,10 +35,8 @@
 
   &:hover,
   &:focus {
-    opacity: 0.5;
-    outline: 1px solid $basic-blue;
+    outline: 1px solid $basic-white;
   }
-
 
   @media (max-width: $tablet-width) {
     min-height: 159px;
@@ -57,11 +55,10 @@
   border: 0;
   background-color: $input-color;
 
-  &:hover,
-  &:focus {
-    opacity: 0.5;
-    outline: 1px solid $basic-blue;
-  }
+  // &:hover,
+  // &:focus {
+  //   outline: 1px solid $basic-white;
+  // }
 
   @media (max-width: $mobile-width) {
     padding: 15px 18px;
@@ -120,6 +117,11 @@
   background-color: transparent;
   display: flex;
   padding: 0;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+  }
 }
 
 .question-form__field--agreement label {
@@ -131,6 +133,10 @@
   line-height: 16px;
   cursor: pointer;
   padding-left: 40px;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .question-form__field--agreement label::before {
@@ -151,4 +157,8 @@
   background-image: url("../img/icon-checkbox.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.question-form__field--agreement input:focus + label::before {
+  box-shadow: 0 0 0 2px $basic-white;
 }
