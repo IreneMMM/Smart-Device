@@ -9,6 +9,7 @@
   width: 100%;
   height: 100%;
   background-color: $bg-modal;
+  overflow-y: auto;
 }
 
 .modal__wrapper {
@@ -43,6 +44,10 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+
+  button {
+    cursor: pointer;
+  }
 
   input[type="text"],
   input[type="tel"],
@@ -156,6 +161,11 @@
 
 .modal--opened {
   display: flex;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  overflow-y: auto;
+  overflow-x: hidden;
   animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 

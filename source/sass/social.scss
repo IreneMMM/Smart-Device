@@ -9,8 +9,14 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
-  width: 112px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  min-width: 112px;
+}
+
+.social__item {
+  margin-right: 15px;
+  margin-bottom: 10px;
 }
 
 .social__link {
@@ -19,16 +25,13 @@
   width: 27px;
   height: 27px;
   background: no-repeat center;
+}
 
-  &--facebook {
-    background-image: url("../img/icon-facebook.svg");
-  }
+.social__img {
+  height: 25px;
+  fill: $bg-icon;
 
-  &--odnoklassniki {
-    background-image: url("../img/icon-ok.svg");
-  }
-
-  &--vkontakte {
-    background-image: url("../img/icon-vk.svg");
+  &:hover {
+    fill: $basic-blue;
   }
 }

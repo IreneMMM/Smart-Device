@@ -1,8 +1,7 @@
 .feedback-form {
   background-color: $basic-blue;
   color: $basic-white;
-  padding-top: 95px;
-  padding-bottom: 115px;
+  padding: 95px 35px 115px;
   position: relative;
   background-repeat: no-repeat;
   background-image: url("../img/triangles-feedback-desktop.svg");
@@ -20,6 +19,33 @@
   }
 }
 
+.feedback-form__container {
+  margin: 0 auto;
+  max-width: 1170px;
+  box-sizing: border-box;
+
+  @media (max-width: $mobile-width) {
+    padding: 0 15px;
+  }
+}
+
+.feedback-form__wrapper {
+  margin-left: auto;
+  width: 575px;
+  max-width: 51%;
+
+  @media (max-width: $tablet-width) {
+    width: auto;
+    max-width: 100%;
+    margin-left: 0;
+    padding: 0 9%;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0;
+  }
+}
+
 .feedback-form__wrapper::after {
   content: "";
   position: absolute;
@@ -32,32 +58,6 @@
 
   @media (max-width: $tablet-width) {
     display: none;
-  }
-}
-
-.feedback-form__container {
-  margin: 0 auto;
-  max-width: 1220px;
-  padding: 0 25px;
-  box-sizing: border-box;
-
-  @media (max-width: $mobile-width) {
-    padding: 0 15px;
-  }
-}
-
-.feedback-form__wrapper {
-  width: 49%;
-  margin-left: auto;
-
-  @media (max-width: $tablet-width) {
-    width: auto;
-    margin-left: 0;
-    padding: 0 9%;
-  }
-
-  @media (max-width: $mobile-width) {
-    padding: 0;
   }
 }
 

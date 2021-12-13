@@ -67,6 +67,7 @@
 .page-header__contacts {
   display: flex;
   align-items: center;
+  max-width: 75%;
 
   @media (max-width: $tablet-width) {
     align-items: flex-start;
@@ -84,6 +85,7 @@
   @media (max-width: $tablet-width) {
     column-gap: 57px;
     row-gap: 0;
+    padding-top: 7px;
   }
 
   @media (max-width: $mobile-width) {
@@ -102,6 +104,12 @@
   text-decoration: none;
   display: inline-block;
   padding-left: 45px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $basic-blue;
+  }
 
   @media (max-width: $tablet-width) {
     font-size: 0;
@@ -163,45 +171,9 @@
 }
 
 .page-header__logo {
-  width: 52px;
-  height: 52px;
-  background: url("../img/icon-logo.svg") no-repeat center / contain;
-
   @media (max-width: $mobile-width) {
     width: 38px;
     height: 38px;
     margin-right: auto;
-  }
-
-  p {
-    @include basic-font;
-    margin: 0;
-    margin-left: 65px;
-    display: inline-block;
-    width: 200px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 29px;
-    color: $basic-white;
-    padding-top: 5px;
-
-    @media (max-width: $tablet-width) {
-      margin-left: 68px;
-    }
-
-    @media (max-width: $mobile-width) {
-      font-size: 0;
-    }
-
-    &:nth-child(2) {
-      font: 500 12px/14px "Roboto", "Arial", sans-serif;
-      color: #788891;
-      padding: 0;
-
-      @media (max-width: $mobile-width) {
-        font-size: 0;
-      }
-    }
   }
 }

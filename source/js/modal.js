@@ -4,28 +4,31 @@
   var KEYCODE = {
     esc: 27
   };
+  var page = document.querySelector('.page');
   var button = document.querySelector('.page-header__button');
   var modal = document.querySelector('.modal');
   var close = modal.querySelector('.modal__button-close');
   var form = modal.querySelector('.modal__form');
-  var userName = modal.querySelector('#username');
-  var userPhone = modal.querySelector('#userphone');
-  var message = modal.querySelector('#userquestion');
+  var userName = document.querySelector('input[name=name]');
+  var userPhone = document.querySelector('input[name=phone]');
+  var message = document.querySelector('input[name=question]');
   var isStorageSupport = true;
-  var storage = {};
+  var storageName = '';
+  var storagePhone = '';
 
   var openmodal = function () {
     modal.classList.add('modal--opened');
+    page.classList.add('page--disabled');
   };
 
   var closemodal = function () {
     modal.classList.remove('modal--opened');
+    page.classList.remove('page--disabled');
   };
 
   try {
-    storage.name = localStorage.getItem('name');
-    storage.phone = localStorage.getItem('phone');
-    storage.message = localStorage.getItem('message');
+    storageName = localStorage.getItem('user-name');
+    storagePhone = localStorage.getItem('user-phone');
   } catch (err) {
     isStorageSupport = false;
   }
@@ -35,9 +38,9 @@
       evt.preventDefault();
       openmodal();
 
-      if (storage.name) {
-        userName.value = storage.name;
-        userPhone.value = storage.phone;
+      if (storageName) {
+        userName.value = storageName;
+        userPhone.value = storagePhone;
         message.value = storage.message;
         message.focus();
       } else {
@@ -54,15 +57,17 @@
   }
 
   if (form) {
-    form.addEventListener('submit', function () {
+    form.addEventListener('submit', () => {
       if (isStorageSupport) {
-        localStorage.setItem('name', userName.value);
-        localStorage.setItem('phone', userPhone.value);
-        localStorage.setItem('message', message.value);
+        if (userPhone.value) {
+          localStorage.setItem('user-phone', userPhone.value);
+        }
+        if (userName.value) {
+          localStorage.setItem('user-name', userName.value);
+        }
       }
     });
   }
-
   if (window) {
     window.addEventListener('keydown', function (evt) {
       if (evt.keyCode === KEYCODE.esc) {

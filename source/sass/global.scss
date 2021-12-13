@@ -1,4 +1,4 @@
-body {
+html {
   overflow-x: hidden;
 }
 
@@ -15,6 +15,11 @@ body {
   color: $basic-grey;
   background-color: $basic-white;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.page--disabled {
+  overflow: hidden;
 }
 
 img {

@@ -75,6 +75,16 @@
   }
 }
 
+.benefits__item svg {
+  order: -1;
+  margin-bottom: 23px;
+  fill: $basic-blue;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 10px;
+  }
+}
+
 .benefits__item:hover {
   background-color: $basic-blue;
   color: $basic-white;
@@ -83,17 +93,8 @@
     color: $basic-white;
   }
 
-  path {
+  svg {
     fill: $basic-white;
-  }
-}
-
-.benefits__item svg {
-  order: -1;
-  margin-bottom: 23px;
-
-  @media (max-width: $tablet-width) {
-    margin-bottom: 10px;
   }
 }
 
