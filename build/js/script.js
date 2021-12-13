@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       if (storageName) {
         userName.value = storageName;
-        userPhone.value = storagePhone; 
+        userPhone.value = storagePhone;
         message.value = storage.message;
         message.focus();
       } else {
