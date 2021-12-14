@@ -239,9 +239,10 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 
   @media (max-width: $mobile-width) {
-    padding: 28px 0;
+    padding: 20px 0;
   }
 
   & h3 {

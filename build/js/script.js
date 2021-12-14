@@ -1,8 +1,8 @@
 'use strict';
 
 (function () {
-  var accordionButton = document.querySelector('.site-navigation__link');
-  var contactsButton = document.querySelector('.contacts__link');
+  var accordionButton = document.querySelector('.page-footer__navigation-header');
+  var contactsButton = document.querySelector('.page-footer__contacts-header');
   var navigation = document.querySelector('.page-footer__navigation');
   var contacts = document.querySelector('.page-footer__contacts');
 
