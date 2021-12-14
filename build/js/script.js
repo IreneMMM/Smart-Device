@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var KEYCODE = {
     esc: 27
   };
-  var page = document.querySelector('.page');
+  var page = document.querySelector('html');
   var button = document.querySelector('.page-header__button');
   var modal = document.querySelector('.modal');
   var close = modal.querySelector('.modal__button-close');
